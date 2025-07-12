@@ -1,151 +1,159 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez l'École XYZ, une institution dédiée à l'excellence éducative depuis 2000.">
-    <title>Présentation de l'École XYZ</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>École Moderne</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">École XYZ</div>
-                <button class="burger-menu" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-links">
-                    <li><a href="#about">À Propos</a></li>
-                    <li><a href="#programs">Programmes</a></li>
-                    <li><a href="#faculty">Équipe</a></li>
-                    <li><a href="#activities">Activités</a></li>
-                    <li><a href="#testimonials">Témoignages</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <select class="nav-select" aria-label="Menu supplémentaire">
-                    <option value="" disabled selected>Plus</option>
-                    <option value="#faq">FAQ</option>
-                    <option value="#game">Jeu</option>
+<body data-theme="light">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">École Moderne</div>
+            <button class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#programs">Programmes</a></li>
+                <li><a href="#faculty">Équipe</a></li>
+                <li><a href="#activities">Activités</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <select class="nav-select">
+                    <option value="">Plus</option>
+                    <option value="faq">FAQ</option>
+                    <option value="quiz">Jeu</option>
                 </select>
-                <button class="theme-toggle" aria-label="Basculer le thème">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <button class="theme-toggle"><i class="fas fa-moon"></i></button>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+    <header id="home">
         <div class="hero-content">
-            <h1 class="animate-title">Bienvenue à l'École XYZ</h1>
-            <p class="animate-text">Former les leaders de demain avec excellence et engagement.</p>
+            <h1 class="animate-title">Bienvenue à l'École Moderne</h1>
+            <p class="animate-text">Découvrez une éducation innovante pour un avenir brillant.</p>
             <a href="#contact" class="cta-button">Inscrivez-vous maintenant</a>
         </div>
     </header>
 
-    <main>
-        <section id="about" class="section fade-in">
-            <h2>À Propos de Nous</h2>
-            <p>L'École XYZ, fondée en 2000, s'engage à offrir une éducation de qualité, préparant des étudiants compétents et engagés pour un avenir prometteur.</p>
-            <div class="stats">
-                <div class="stat-item"><span class="stat-number" data-target="500">0</span> Étudiants</div>
-                <div class="stat-item"><span class="stat-number" data-target="25">0</span> Années d'expérience</div>
-                <div class="stat-item"><span class="stat-number" data-target="50">0</span> Professeurs</div>
+    <section id="about" class="section fade-in">
+        <h2>À propos de nous</h2>
+        <p>Notre école est dédiée à fournir une éducation de qualité, en combinant innovation et tradition pour préparer nos élèves à un monde en constante évolution.</p>
+        <div class="stats">
+            <div class="stat-item slide-in">
+                <span class="stat-number">500+</span>
+                Étudiants
             </div>
-        </section>
-
-        <section id="programs" class="section fade-in">
-            <h2>Nos Programmes</h2>
-            <div id="program-list" class="program-grid">
-                <p id="program-fallback" style="display: none;">Aucun programme disponible pour le moment.</p>
+            <div class="stat-item slide-in">
+                <span class="stat-number">50+</span>
+                Enseignants
             </div>
-        </section>
-
-        <section id="faculty" class="section fade-in">
-            <h2>Notre Équipe</h2>
-            <div class="faculty-grid">
-                <div class="faculty-member slide-in">
-                    <img src="https://picsum.photos/120" alt="Dr. Jean Dupont, Directeur" loading="lazy" onerror="this.src='https://via.placeholder.com/120?text=Image+Indisponible';">
-                    <h3>Dr. Jean Dupont</h3>
-                    <p>Directeur, spécialisé en sciences de l'éducation.</p>
-                </div>
-                <div class="faculty-member slide-in">
-                    <img src="https://picsum.photos/120" alt="Mme Marie Curie, Professeure" loading="lazy" onerror="this.src='https://via.placeholder.com/120?text=Image+Indisponible';">
-                    <h3>Mme Marie Curie</h3>
-                    <p>Professeure de physique.</p>
-                </div>
+            <div class="stat-item slide-in">
+                <span class="stat-number">20+</span>
+                Années d'expérience
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="activities" class="section fade-in">
-            <h2>Activités Extrascolaires</h2>
-            <ul class="activity-list">
-                <li class="slide-in"><i class="fas fa-flask"></i> Clubs de science</li>
-                <li class="slide-in"><i class="fas fa-futbol"></i> Équipes sportives</li>
-                <li class="slide-in"><i class="fas fa-paint-brush"></i> Ateliers artistiques</li>
-            </ul>
-        </section>
+    <section id="programs" class="section fade-in">
+        <h2>Nos Programmes</h2>
+        <div class="program-grid">
+            <!-- Les programmes seront chargés dynamiquement via JavaScript -->
+        </div>
+    </section>
 
-        <section id="testimonials" class="section fade-in">
-            <h2>Témoignages</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial slide-in">
-                    <img src="https://picsum.photos/80" alt="Sophie, étudiante" loading="lazy" onerror="this.src='https://via.placeholder.com/80?text=Image+Indisponible';">
-                    <p>"L'École XYZ m'a offert une expérience éducative incroyable !" - Sophie, étudiante</p>
-                </div>
-                <div class="testimonial slide-in">
-                    <img src="https://picsum.photos/80" alt="Paul, parent" loading="lazy" onerror="this.src='https://via.placeholder.com/80?text=Image+Indisponible';">
-                    <p>"Un environnement parfait pour le développement de mon enfant." - Paul, parent</p>
-                </div>
+    <section id="faculty" class="section fade-in">
+        <h2>Notre Équipe</h2>
+        <div class="faculty-grid">
+            <div class="faculty-member slide-in">
+                <img src="https://picsum.photos/120" alt="Dr. Jean Dupont, Directeur" loading="lazy">
+                <h3>Dr. Jean Dupont</h3>
+                <p>Directeur</p>
             </div>
-        </section>
-
-        <section id="faq" class="section fade-in">
-            <h2>FAQ</h2>
-            <div class="faq-item">
-                <h3>Quels sont les frais de scolarité ?</h3>
-                <p>Contactez-nous pour des informations détaillées.</p>
+            <div class="faculty-member slide-in">
+                <img src="https://picsum.photos/120" alt="Mme Marie Curie, Professeure" loading="lazy">
+                <h3>Mme Marie Curie</h3>
+                <p>Professeure</p>
             </div>
-            <div class="faq-item">
-                <h3>Offrez-vous des bourses ?</h3>
-                <p>Oui, des bourses sont disponibles pour les étudiants méritants.</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="game" class="section fade-in">
-            <h2>Testez vos connaissances</h2>
-            <div id="quiz">
-                <h3 id="question"></h3>
-                <div id="options"></div>
-                <p id="result"></p>
-                <p>Score: <span id="score">0</span></p>
-                <button id="next-question" class="pulse">Question suivante</button>
-            </div>
-        </section>
+    <section id="activities" class="section fade-in">
+        <h2>Activités extrascolaires</h2>
+        <ul class="activity-list">
+            <li class="slide-in"><i class="fas fa-futbol"></i>Football</li>
+            <li class="slide-in"><i class="fas fa-paint-brush"></i>Art</li>
+            <li class="slide-in"><i class="fas fa-robot"></i>Club de robotique</li>
+        </ul>
+    </section>
 
-        <section id="contact" class="section fade-in">
-            <h2>Contactez-Nous</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
-    </main>
+    <section id="testimonials" class="section fade-in">
+        <h2>Témoignages</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial slide-in">
+                <img src="https://picsum.photos/80" alt="Sophie, étudiante" loading="lazy">
+                <p>"L'École Moderne m'a donné les outils pour réussir."</p>
+                <h3>Sophie, étudiante</h3>
+            </div>
+            <div class="testimonial slide-in">
+                <img src="https://picsum.photos/80" alt="Paul, parent" loading="lazy">
+                <p>"Un environnement d'apprentissage exceptionnel."</p>
+                <h3>Paul, parent</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section fade-in">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <h3>Quels sont les frais de scolarité ?</h3>
+            <p>Les frais varient selon le programme. Contactez-nous pour plus de détails.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Proposez-vous des bourses ?</h3>
+            <p>Oui, des bourses sont disponibles pour les étudiants méritants.</p>
+        </div>
+    </section>
+
+    <section id="quiz" class="section fade-in">
+        <h2>Jeu : Testez vos connaissances</h2>
+        <div id="quiz-content">
+            <p id="question"></p>
+            <div id="options"></div>
+            <button id="next-question">Question suivante</button>
+        </div>
+    </section>
+
+    <section id="contact" class="section fade-in">
+        <h2>Contactez-nous</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
 
     <footer>
-        <p>© 2025 École XYZ. Tous droits réservés.</p>
+        <p>&copy; 2025 École Moderne. Tous droits réservés.</p>
     </footer>
 
     <script src="script.js"></script>
