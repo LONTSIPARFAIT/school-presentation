@@ -7,21 +7,26 @@ const programs = [
 
 // Fonction pour remplir la liste des programmes
 function loadPrograms() {
+    console.log("Exécution de loadPrograms()");
     const programList = document.getElementById('program-list');
     const fallback = document.getElementById('program-fallback');
+    
     if (!programList) {
         console.error("L'élément #program-list n'a pas été trouvé dans le DOM.");
         return;
     }
+    
     if (programs.length === 0) {
         console.warn("Aucun programme disponible.");
-        fallback.style.display = 'block';
+        if (fallback) fallback.style.display = 'block';
         return;
     }
+
     programList.innerHTML = ''; // Nettoyer le contenu existant
     programs.forEach((program, index) => {
+        console.log(`Ajout du programme : ${program.name}`);
         const programCard = document.createElement('div');
-        programCard.classList.add('program-card', 'slide-in');
+        programCard.classList.add('program-card', 'slide-in', 'visible'); // Ajouter .visible immédiatement
         programCard.style.transitionDelay = `${index * 0.1}s`;
         programCard.innerHTML = `
             <h3>${program.name}</h3>
@@ -29,6 +34,7 @@ function loadPrograms() {
         `;
         programList.appendChild(programCard);
     });
+    console.log(`Nombre total de programmes ajoutés : ${programs.length}`);
 }
 
 // Gestion du menu burger
@@ -72,6 +78,7 @@ const elements = document.querySelectorAll('.fade-in, .slide-in');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            console.log(`Élément visible : ${entry.target.id || entry.target.className}`);
             entry.target.classList.add('visible');
         }
     });
@@ -129,6 +136,7 @@ let currentQuestion = 0;
 let score = 0;
 
 function loadQuiz() {
+    console.log("Exécution de loadQuiz()");
     const quiz = document.getElementById('quiz');
     const questionEl = document.getElementById('question');
     const optionsEl = document.getElementById('options');
@@ -180,6 +188,7 @@ document.getElementById('next-question').addEventListener('click', () => {
 
 // Charger les programmes et le quiz au démarrage
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Événement DOMContentLoaded déclenché");
     try {
         loadPrograms();
         loadQuiz();
