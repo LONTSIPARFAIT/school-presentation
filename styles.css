@@ -132,7 +132,7 @@ body[data-theme="dark"] .theme-toggle::after {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
-    display: inline-block; /* Permet au trait de survol de correspondre à la largeur du texte */
+    display: inline-block;
     position: relative;
 }
 
@@ -148,7 +148,7 @@ body[data-theme="dark"] .theme-toggle::after {
 }
 
 .nav-links li a:hover::after {
-    width: 100%; /* Le trait s'adapte à la largeur du texte grâce à inline-block */
+    width: 100%;
 }
 
 .nav-links li a:hover {
@@ -351,6 +351,7 @@ body[data-theme="dark"] .section h2 {
     text-align: center;
     transition: transform 0.3s;
     min-height: 100px;
+    display: block; /* Assurer la visibilité */
 }
 
 body[data-theme="dark"] .program-card {
@@ -717,6 +718,14 @@ body[data-theme="dark"] footer {
         height: 100px;
     }
 
+    .faculty-member h3 {
+        font-size: 1rem;
+    }
+
+    .faculty-member p {
+        font-size: 0.9rem;
+    }
+
     .testimonial-grid {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1rem;
@@ -725,6 +734,14 @@ body[data-theme="dark"] footer {
     .testimonial img {
         width: 70px;
         height: 70px;
+    }
+
+    .testimonial h3 {
+        font-size: 1rem;
+    }
+
+    .testimonial p {
+        font-size: 0.9rem;
     }
 
     .activity-list li {
@@ -758,7 +775,7 @@ body[data-theme="dark"] footer {
 @media (max-width: 768px) {
     .burger-menu {
         display: block;
-        margin-left: 1rem; /* Espacement pour aligner à droite */
+        margin-left: 1rem;
     }
 
     .nav-links {
@@ -784,29 +801,29 @@ body[data-theme="dark"] footer {
     .nav-links li {
         margin: 0.5rem 0;
         display: flex;
-        justify-content: center; /* Centrer les liens horizontalement */
+        justify-content: center;
         align-items: center;
     }
 
     .nav-right {
         gap: 0.5rem;
-        margin-right: 1rem; /* Espacement du bord droit */
+        margin-right: 1rem;
     }
 
     .theme-toggle {
-        color: #1e3a8a; /* Couleur plus sombre pour le mode clair */
+        color: #1e3a8a;
         font-size: 1rem;
     }
 
     body[data-theme="dark"] .theme-toggle {
-        color: #e5e7eb; /* Couleur claire pour le mode sombre */
+        color: #e5e7eb;
     }
 
     .nav-select {
         width: 90px;
         font-size: 0.9rem;
         padding: 0.4rem;
-        background: #f1f5f9; /* Fond légèrement plus foncé pour contraste */
+        background: #f1f5f9;
         color: #1e3a8a;
     }
 
@@ -824,9 +841,56 @@ body[data-theme="dark"] footer {
         padding: 1rem;
     }
 
-    .faculty-member img,
-    .testimonial img {
+    .program-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .program-card {
+        padding: 0.8rem;
+    }
+
+    .program-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .program-card p {
+        font-size: 0.9rem;
+    }
+
+    .faculty-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .faculty-member img {
         width: 100px;
         height: 100px;
+    }
+
+    .faculty-member h3 {
+        font-size: 1rem;
+    }
+
+    .faculty-member p {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .testimonial img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .testimonial h3 {
+        font-size: 1rem;
+    }
+
+    .testimonial p {
+        font-size: 0.9rem;
     }
 }
