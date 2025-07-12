@@ -132,6 +132,8 @@ body[data-theme="dark"] .theme-toggle::after {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+    display: inline-block; /* Permet au trait de survol de correspondre à la largeur du texte */
+    position: relative;
 }
 
 .nav-links li a::after {
@@ -146,7 +148,7 @@ body[data-theme="dark"] .theme-toggle::after {
 }
 
 .nav-links li a:hover::after {
-    width: 100%;
+    width: 100%; /* Le trait s'adapte à la largeur du texte grâce à inline-block */
 }
 
 .nav-links li a:hover {
@@ -652,6 +654,10 @@ body[data-theme="dark"] footer {
         font-size: 0.9rem;
     }
 
+    .nav-right {
+        gap: 0.8rem;
+    }
+
     .nav-select {
         font-size: 0.9rem;
         padding: 0.4rem;
@@ -739,10 +745,6 @@ body[data-theme="dark"] footer {
         font-size: 1.8rem;
     }
 
-    .nav-right {
-        gap: 0.8rem;
-    }
-
     #quiz {
         max-width: 500px;
     }
@@ -756,6 +758,7 @@ body[data-theme="dark"] footer {
 @media (max-width: 768px) {
     .burger-menu {
         display: block;
+        margin-left: 1rem; /* Espacement pour aligner à droite */
     }
 
     .nav-links {
@@ -780,6 +783,9 @@ body[data-theme="dark"] footer {
 
     .nav-links li {
         margin: 0.5rem 0;
+        display: flex;
+        justify-content: center; /* Centrer les liens horizontalement */
+        align-items: center;
     }
 
     .nav-right {
