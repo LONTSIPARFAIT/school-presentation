@@ -121,7 +121,7 @@ header {
     color: #fff;
     text-align: center;
     padding: 6rem 2rem 4rem;
-    background-image: url('https://via.placeholder.com/1200x400');
+    background-image: url('./img/');
     background-size: cover;
     background-position: center;
 }
