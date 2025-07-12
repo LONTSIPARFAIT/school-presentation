@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -145,6 +144,45 @@ body[data-theme="dark"] .theme-toggle::after {
 
 .nav-links li a:hover {
     color: #f97316;
+}
+
+/* Style du menu déroulant */
+.nav-select {
+    background: #fff;
+    color: #1e3a8a;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%231e3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 12px;
+    padding-right: 2rem;
+}
+
+body[data-theme="dark"] .nav-select {
+    background: #4b5563;
+    color: #e5e7eb;
+    border-color: #6b7280;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%23e5e7eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+}
+
+.nav-select:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 5px rgba(249, 115, 22, 0.5);
+}
+
+.nav-select:hover {
+    background-color: #dbeafe;
+}
+
+body[data-theme="dark"] .nav-select:hover {
+    background-color: #6b7280;
 }
 
 /* Section héroïque */
@@ -611,7 +649,13 @@ body[data-theme="dark"] footer {
 
     .theme-toggle {
         position: absolute;
+        right: 100px;
+    }
+
+    .nav-select {
+        position: absolute;
         right: 60px;
+        width: 100px;
     }
 
     .hero-content .animate-title {
