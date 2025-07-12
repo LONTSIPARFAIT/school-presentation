@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez l'École XYZ, une institution dédiée à l'excellence éducative depuis 2000.">
     <title>Présentation de l'École XYZ</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -32,8 +33,8 @@
             </button>
         </nav>
         <div class="hero-content">
-            <h1>Bienvenue à l'École XYZ</h1>
-            <p>Former les leaders de demain avec excellence et engagement.</p>
+            <h1 class="animate-title">Bienvenue à l'École XYZ</h1>
+            <p class="animate-text">Former les leaders de demain avec excellence et engagement.</p>
             <a href="#contact" class="cta-button">Inscrivez-vous maintenant</a>
         </div>
     </header>
@@ -57,13 +58,13 @@
         <section id="faculty" class="section fade-in">
             <h2>Notre Équipe</h2>
             <div class="faculty-grid">
-                <div class="faculty-member">
-                    <img src="https://via.placeholder.com/120" alt="Dr. Jean Dupont" loading="lazy">
+                <div class="faculty-member slide-in">
+                    <img src="https://via.placeholder.com/120" alt="Dr. Jean Dupont, Directeur" loading="lazy">
                     <h3>Dr. Jean Dupont</h3>
                     <p>Directeur, spécialisé en sciences de l'éducation.</p>
                 </div>
-                <div class="faculty-member">
-                    <img src="https://via.placeholder.com/120" alt="Mme Marie Curie" loading="lazy">
+                <div class="faculty-member slide-in">
+                    <img src="https://via.placeholder.com/120" alt="Mme Marie Curie, Professeure" loading="lazy">
                     <h3>Mme Marie Curie</h3>
                     <p>Professeure de physique.</p>
                 </div>
@@ -73,21 +74,21 @@
         <section id="activities" class="section fade-in">
             <h2>Activités Extrascolaires</h2>
             <ul class="activity-list">
-                <li><i class="fas fa-flask"></i> Clubs de science</li>
-                <li><i class="fas fa-futbol"></i> Équipes sportives</li>
-                <li><i class="fas fa-paint-brush"></i> Ateliers artistiques</li>
+                <li class="slide-in"><i class="fas fa-flask"></i> Clubs de science</li>
+                <li class="slide-in"><i class="fas fa-futbol"></i> Équipes sportives</li>
+                <li class="slide-in"><i class="fas fa-paint-brush"></i> Ateliers artistiques</li>
             </ul>
         </section>
 
         <section id="testimonials" class="section fade-in">
             <h2>Témoignages</h2>
             <div class="testimonial-grid">
-                <div class="testimonial">
-                    <img src="https://via.placeholder.com/80" alt="Étudiant" loading="lazy">
+                <div class="testimonial slide-in">
+                    <img src="https://via.placeholder.com/80" alt="Sophie, étudiante" loading="lazy">
                     <p>"L'École XYZ m'a offert une expérience éducative incroyable !" - Sophie, étudiante</p>
                 </div>
-                <div class="testimonial">
-                    <img src="https://via.placeholder.com/80" alt="Parent" loading="lazy">
+                <div class="testimonial slide-in">
+                    <img src="https://via.placeholder.com/80" alt="Paul, parent" loading="lazy">
                     <p>"Un environnement parfait pour le développement de mon enfant." - Paul, parent</p>
                 </div>
             </div>
@@ -112,7 +113,7 @@
                 <div id="options"></div>
                 <p id="result"></p>
                 <p>Score: <span id="score">0</span></p>
-                <button id="next-question">Question suivante</button>
+                <button id="next-question" class="pulse">Question suivante</button>
             </div>
         </section>
 
