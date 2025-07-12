@@ -53,12 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadPrograms() {
         console.log('Exécution de loadPrograms()');
         const programGrid = document.querySelector('.program-grid');
+        if (!programGrid) {
+            console.error('Erreur : .program-grid non trouvé dans le DOM');
+            return;
+        }
         const programs = [
             { title: 'Sciences', description: 'Explorez les merveilles de la science.' },
             { title: 'Littérature', description: 'Plongez dans le monde des mots.' },
             { title: 'Technologie', description: 'Maîtrisez les outils du futur.' }
         ];
 
+        programGrid.innerHTML = ''; // Vider la grille pour éviter les doublons
         programs.forEach((program, index) => {
             console.log(`Ajout du programme : ${program.title}`);
             const programCard = document.createElement('div');
@@ -87,6 +92,16 @@ document.addEventListener('DOMContentLoaded', () => {
             question: "Quel est le plus grand océan ?",
             options: ["Atlantique", "Indien", "Pacifique", "Arctique"],
             answer: "Pacifique"
+        },
+        {
+            question: "Qui a peint la Joconde ?",
+            options: ["Vincent van Gogh", "Pablo Picasso", "Léonard de Vinci", "Claude Monet"],
+            answer: "Léonard de Vinci"
+        },
+        {
+            question: "Quel est le symbole chimique de l'or ?",
+            options: ["Au", "Ag", "Fe", "Cu"],
+            answer: "Au"
         }
     ];
 
