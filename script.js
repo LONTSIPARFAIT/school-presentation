@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (currentQuestionIndex < questions.length) {
             const currentQuestion = questions[currentQuestionIndex];
-            questionElement.textContent = currentQuestion.question;
+            questionElement.textContent = `Question ${currentQuestionIndex + 1} : ${currentQuestion.question}`;
             optionsElement.innerHTML = '';
             scoreElement.style.display = 'none';
             resultElement.style.display = 'none';
