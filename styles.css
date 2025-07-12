@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -11,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f7fa;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 
 body[data-theme="dark"] {
@@ -62,7 +61,7 @@ body[data-theme="dark"] .navbar {
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .theme-toggle:hover {
@@ -149,7 +148,7 @@ body[data-theme="dark"] .theme-toggle::after {
 
 /* Style du menu déroulant */
 .nav-select {
-    background: #fff;
+    background: #f1f5f9;
     color: #1e3a8a;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -775,12 +774,24 @@ body[data-theme="dark"] footer {
     .theme-toggle {
         position: absolute;
         right: 100px;
+        color: #1e3a8a; /* Couleur plus sombre pour le mode clair */
+    }
+
+    body[data-theme="dark"] .theme-toggle {
+        color: #e5e7eb; /* Couleur claire pour le mode sombre */
     }
 
     .nav-select {
         position: absolute;
         right: 60px;
         width: 100px;
+        background: #f1f5f9; /* Fond légèrement plus foncé pour contraste */
+        color: #1e3a8a;
+    }
+
+    body[data-theme="dark"] .nav-select {
+        background: #4b5563;
+        color: #e5e7eb;
     }
 
     .hero-content .animate-title {
