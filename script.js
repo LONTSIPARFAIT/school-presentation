@@ -8,6 +8,17 @@ const programs = [
 // Fonction pour remplir la liste des programmes
 function loadPrograms() {
     const programList = document.getElementById('program-list');
+    const fallback = document.getElementById('program-fallback');
+    if (!programList) {
+        console.error("L'élément #program-list n'a pas été trouvé dans le DOM.");
+        return;
+    }
+    if (programs.length === 0) {
+        console.warn("Aucun programme disponible.");
+        fallback.style.display = 'block';
+        return;
+    }
+    programList.innerHTML = ''; // Nettoyer le contenu existant
     programs.forEach((program, index) => {
         const programCard = document.createElement('div');
         programCard.classList.add('program-card', 'slide-in');
@@ -24,25 +35,37 @@ function loadPrograms() {
 const burgerMenu = document.querySelector('.burger-menu');
 const navLinks = document.querySelector('.nav-links');
 
-burgerMenu.addEventListener('click', () => {
-    burgerMenu.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
+if (burgerMenu && navLinks) {
+    burgerMenu.addEventListener('click', () => {
+        burgerMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+} else {
+    console.error("Menu burger ou nav-links non trouvé(s).");
+}
 
 // Bascule du thème clair/sombre
 const themeToggle = document.querySelector('.theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+    });
+} else {
+    console.error("Bouton de bascule de thème non trouvé.");
+}
 
 // Gestion du menu déroulant
 const navSelect = document.querySelector('.nav-select');
-navSelect.addEventListener('change', () => {
-    if (navSelect.value) {
-        window.location.hash = navSelect.value;
-        navSelect.value = ''; // Réinitialiser à l'option par défaut
-    }
-});
+if (navSelect) {
+    navSelect.addEventListener('change', () => {
+        if (navSelect.value) {
+            window.location.hash = navSelect.value;
+            navSelect.value = ''; // Réinitialiser à l'option par défaut
+        }
+    });
+} else {
+    console.error("Menu déroulant non trouvé.");
+}
 
 // Animation des sections et éléments
 const elements = document.querySelectorAll('.fade-in, .slide-in');
@@ -113,6 +136,11 @@ function loadQuiz() {
     const scoreEl = document.getElementById('score');
     const nextButton = document.getElementById('next-question');
 
+    if (!quiz || !questionEl || !optionsEl || !resultEl || !scoreEl || !nextButton) {
+        console.error("Un ou plusieurs éléments du quiz sont introuvables.");
+        return;
+    }
+
     questionEl.innerText = quizData[currentQuestion].question;
     optionsEl.innerHTML = '';
     resultEl.innerText = '';
@@ -152,6 +180,10 @@ document.getElementById('next-question').addEventListener('click', () => {
 
 // Charger les programmes et le quiz au démarrage
 document.addEventListener('DOMContentLoaded', () => {
-    loadPrograms();
-    loadQuiz();
+    try {
+        loadPrograms();
+        loadQuiz();
+    } catch (error) {
+        console.error("Erreur lors du chargement initial :", error);
+    }
 });
