@@ -127,7 +127,7 @@ header {
 }
 
 body[data-theme="dark"] header {
-    background: linear-gradient(135deg, #111827, #1f2937);
+    background: linear-gradient(135deg, #111827, #0A6AEFFF);
 }
 
 .hero-content h1 {
