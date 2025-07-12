@@ -26,7 +26,7 @@ function loadPrograms() {
     programs.forEach((program, index) => {
         console.log(`Ajout du programme : ${program.name}`);
         const programCard = document.createElement('div');
-        programCard.classList.add('program-card', 'slide-in', 'visible'); // Ajouter .visible immédiatement
+        programCard.classList.add('program-card', 'slide-in', 'visible');
         programCard.style.transitionDelay = `${index * 0.1}s`;
         programCard.innerHTML = `
             <h3>${program.name}</h3>
