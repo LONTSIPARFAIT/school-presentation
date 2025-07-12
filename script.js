@@ -35,6 +35,15 @@ themeToggle.addEventListener('click', () => {
     document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
 });
 
+// Gestion du menu déroulant
+const navSelect = document.querySelector('.nav-select');
+navSelect.addEventListener('change', () => {
+    if (navSelect.value) {
+        window.location.hash = navSelect.value;
+        navSelect.value = ''; // Réinitialiser à l'option par défaut
+    }
+});
+
 // Animation des sections et éléments
 const elements = document.querySelectorAll('.fade-in, .slide-in');
 const observer = new IntersectionObserver(entries => {
