@@ -18,26 +18,29 @@ body[data-theme="dark"] {
     color: #e5e7eb;
 }
 
-/* Barre de navigation fixe */
+/* Barre de navigation pleine largeur */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #1e3a8a;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
 }
 
 body[data-theme="dark"] .navbar {
-    background: #111827;
+    background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .logo {
@@ -585,7 +588,7 @@ body[data-theme="dark"] footer {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: #1e3a8a;
+        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
         position: absolute;
         top: 60px;
         left: 0;
@@ -594,7 +597,7 @@ body[data-theme="dark"] footer {
     }
 
     body[data-theme="dark"] .nav-links {
-        background: #111827;
+        background: linear-gradient(135deg, #111827, #1f2937);
     }
 
     .nav-links.active {
