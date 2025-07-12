@@ -8,9 +8,10 @@ const programs = [
 // Fonction pour remplir la liste des programmes
 function loadPrograms() {
     const programList = document.getElementById('program-list');
-    programs.forEach(program => {
+    programs.forEach((program, index) => {
         const programCard = document.createElement('div');
-        programCard.classList.add('program-card');
+        programCard.classList.add('program-card', 'slide-in');
+        programCard.style.transitionDelay = `${index * 0.1}s`;
         programCard.innerHTML = `
             <h3>${program.name}</h3>
             <p>${program.description}</p>
@@ -34,8 +35,8 @@ themeToggle.addEventListener('click', () => {
     document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
 });
 
-// Animation des sections
-const sections = document.querySelectorAll('.fade-in');
+// Animation des sections et éléments
+const elements = document.querySelectorAll('.fade-in, .slide-in');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -44,7 +45,7 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.1 });
 
-sections.forEach(section => observer.observe(section));
+elements.forEach(element => observer.observe(element));
 
 // Animation des statistiques
 const statNumbers = document.querySelectorAll('.stat-number');
@@ -62,6 +63,15 @@ statNumbers.forEach(stat => {
     };
     observer.observe(stat);
     stat.addEventListener('animationstart', updateCount, { once: true });
+});
+
+// Gestion de la FAQ
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('active');
+    });
 });
 
 // Gestion du quiz
