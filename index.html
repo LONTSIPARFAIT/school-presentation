@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation de l'École XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">École XYZ</div>
+            <button class="burger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#programs">Programmes</a></li>
+                <li><a href="#faculty">Équipe</a></li>
+                <li><a href="#activities">Activités</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#game">Jeu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Basculer le thème">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+        <div class="hero-content">
+            <h1>Bienvenue à l'École XYZ</h1>
+            <p>Former les leaders de demain avec excellence et engagement.</p>
+            <a href="#contact" class="cta-button">Inscrivez-vous maintenant</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section fade-in">
+            <h2>À Propos de Nous</h2>
+            <p>L'École XYZ, fondée en 2000, s'engage à offrir une éducation de qualité, préparant des étudiants compétents et engagés pour un avenir prometteur.</p>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-number" data-target="500">0</span> Étudiants</div>
+                <div class="stat-item"><span class="stat-number" data-target="25">0</span> Années d'expérience</div>
+                <div class="stat-item"><span class="stat-number" data-target="50">0</span> Professeurs</div>
+            </div>
+        </section>
+
+        <section id="programs" class="section fade-in">
+            <h2>Nos Programmes</h2>
+            <div id="program-list" class="program-grid"></div>
+        </section>
+
+        <section id="faculty" class="section fade-in">
+            <h2>Notre Équipe</h2>
+            <div class="faculty-grid">
+                <div class="faculty-member">
+                    <img src="https://via.placeholder.com/120" alt="Dr. Jean Dupont" loading="lazy">
+                    <h3>Dr. Jean Dupont</h3>
+                    <p>Directeur, spécialisé en sciences de l'éducation.</p>
+                </div>
+                <div class="faculty-member">
+                    <img src="https://via.placeholder.com/120" alt="Mme Marie Curie" loading="lazy">
+                    <h3>Mme Marie Curie</h3>
+                    <p>Professeure de physique.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="section fade-in">
+            <h2>Activités Extrascolaires</h2>
+            <ul class="activity-list">
+                <li><i class="fas fa-flask"></i> Clubs de science</li>
+                <li><i class="fas fa-futbol"></i> Équipes sportives</li>
+                <li><i class="fas fa-paint-brush"></i> Ateliers artistiques</li>
+            </ul>
+        </section>
+
+        <section id="testimonials" class="section fade-in">
+            <h2>Témoignages</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/80" alt="Étudiant" loading="lazy">
+                    <p>"L'École XYZ m'a offert une expérience éducative incroyable !" - Sophie, étudiante</p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/80" alt="Parent" loading="lazy">
+                    <p>"Un environnement parfait pour le développement de mon enfant." - Paul, parent</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section fade-in">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3>Quels sont les frais de scolarité ?</h3>
+                <p>Contactez-nous pour des informations détaillées.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Offrez-vous des bourses ?</h3>
+                <p>Oui, des bourses sont disponibles pour les étudiants méritants.</p>
+            </div>
+        </section>
+
+        <section id="game" class="section fade-in">
+            <h2>Testez vos connaissances</h2>
+            <div id="quiz">
+                <h3 id="question"></h3>
+                <div id="options"></div>
+                <p id="result"></p>
+                <p>Score: <span id="score">0</span></p>
+                <button id="next-question">Question suivante</button>
+            </div>
+        </section>
+
+        <section id="contact" class="section fade-in">
+            <h2>Contactez-Nous</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 École XYZ. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
