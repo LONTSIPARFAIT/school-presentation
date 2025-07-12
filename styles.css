@@ -504,6 +504,16 @@ body[data-theme="dark"] .faq-item h3 {
     text-align: center;
 }
 
+#question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+body[data-theme="dark"] #question {
+    color: #e5e7eb;
+}
+
 #options {
     display: flex;
     flex-direction: column;
@@ -791,6 +801,10 @@ body[data-theme="dark"] footer {
         max-width: 500px;
     }
 
+    #question {
+        font-size: 1.1rem;
+    }
+
     .contact-form {
         max-width: 500px;
     }
@@ -939,6 +953,10 @@ body[data-theme="dark"] footer {
     #quiz {
         max-width: 100%;
         padding: 0 1rem;
+    }
+
+    #question {
+        font-size: 1rem;
     }
 
     #score, #result {
