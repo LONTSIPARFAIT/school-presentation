@@ -33,6 +33,7 @@ body[data-theme="dark"] {
     padding: 1rem;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
 }
 
 body[data-theme="dark"] .navbar {
@@ -41,8 +42,13 @@ body[data-theme="dark"] .navbar {
 
 .logo {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 /* Bouton de bascule de thème */
@@ -52,6 +58,11 @@ body[data-theme="dark"] .navbar {
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
 }
 
 body[data-theme="dark"] .theme-toggle .fa-moon {
@@ -98,10 +109,12 @@ body[data-theme="dark"] .theme-toggle::after {
 .nav-links {
     display: flex;
     list-style: none;
+    transition: all 0.3s ease;
 }
 
 .nav-links li {
     margin-left: 2rem;
+    position: relative;
 }
 
 .nav-links li a {
@@ -109,6 +122,21 @@ body[data-theme="dark"] .theme-toggle::after {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: #f97316;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
 }
 
 .nav-links li a:hover {
@@ -121,23 +149,27 @@ header {
     color: #fff;
     text-align: center;
     padding: 6rem 2rem 4rem;
-    background-image: url('./img/img.png');
+    background-image: url('https://via.placeholder.com/1200x400');
     background-size: cover;
     background-position: center;
 }
 
 body[data-theme="dark"] header {
-    background: linear-gradient(135deg, #111827, #0A6AEFFF);
+    background: linear-gradient(135deg, #111827, #1f2937);
 }
 
-.hero-content h1 {
+.hero-content .animate-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
 }
 
-.hero-content p {
+.hero-content .animate-text {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInDown 1s ease 0.3s forwards;
 }
 
 .cta-button {
@@ -147,12 +179,69 @@ body[data-theme="dark"] header {
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s;
+    display: inline-block;
+    transition: transform 0.3s, background 0.3s;
 }
 
 .cta-button:hover {
     background: #ea580c;
+    transform: scale(1.1);
 }
+
+/* Animations d'entrée */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in:nth-child(1) { transition-delay: 0.1s; }
+.slide-in:nth-child(2) { transition-delay: 0.2s; }
+.slide-in:nth-child(3) { transition-delay: 0.3s; }
 
 /* Sections générales */
 .section {
@@ -176,18 +265,6 @@ body[data-theme="dark"] .section {
 
 body[data-theme="dark"] .section h2 {
     color: #3b82f6;
-}
-
-/* Animations d'entrée */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Statistiques */
@@ -257,6 +334,11 @@ body[data-theme="dark"] .faculty-member {
     object-fit: cover;
     object-position: 50% 20%;
     margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.faculty-member img:hover {
+    transform: scale(1.1);
 }
 
 /* Liste des activités */
@@ -273,10 +355,15 @@ body[data-theme="dark"] .faculty-member {
     border-radius: 6px;
     flex: 1 1 200px;
     text-align: center;
+    transition: transform 0.3s;
 }
 
 body[data-theme="dark"] .activity-list li {
     background: #4b5563;
+}
+
+.activity-list li:hover {
+    transform: scale(1.05);
 }
 
 .activity-list li i {
@@ -306,6 +393,11 @@ body[data-theme="dark"] .testimonial {
     height: 80px;
     border-radius: 50%;
     margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.testimonial img:hover {
+    transform: scale(1.1);
 }
 
 /* FAQ */
@@ -316,14 +408,22 @@ body[data-theme="dark"] .testimonial {
 .faq-item h3 {
     color: #1e3a8a;
     cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s;
 }
 
 body[data-theme="dark"] .faq-item h3 {
     color: #3b82f6;
 }
 
+.faq-item h3:hover {
+    color: #f97316;
+}
+
 .faq-item p {
     display: none;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .faq-item.active p {
@@ -349,21 +449,32 @@ body[data-theme="dark"] .faq-item h3 {
     padding: 0.8rem;
     border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 body[data-theme="dark"] .option {
     background: #4b5563;
 }
 
+.option:hover {
+    transform: scale(1.05);
+    background: #dbeafe;
+}
+
+body[data-theme="dark"] .option:hover {
+    background: #6b7280;
+}
+
 .option.correct {
     background: #22c55e;
     color: #fff;
+    transform: scale(1.05);
 }
 
 .option.incorrect {
     background: #ef4444;
     color: #fff;
+    transform: scale(1.05);
 }
 
 #next-question {
@@ -375,6 +486,7 @@ body[data-theme="dark"] .option {
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.3s;
+    animation: pulse 2s infinite;
 }
 
 #next-question:hover {
@@ -411,6 +523,7 @@ body[data-theme="dark"] .form-group label {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 body[data-theme="dark"] .form-group input,
@@ -418,6 +531,13 @@ body[data-theme="dark"] .form-group textarea {
     border-color: #4b5563;
     background: #1f2937;
     color: #e5e7eb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 5px rgba(249, 115, 22, 0.5);
 }
 
 .form-group textarea {
@@ -433,11 +553,12 @@ body[data-theme="dark"] .form-group textarea {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .contact-form button:hover {
     background: #ea580c;
+    transform: scale(1.05);
 }
 
 /* Pied de page */
@@ -447,6 +568,7 @@ footer {
     background: #1e3a8a;
     color: #fff;
     margin-top: 2rem;
+    transition: background 0.3s;
 }
 
 body[data-theme="dark"] footer {
@@ -468,6 +590,7 @@ body[data-theme="dark"] footer {
         top: 60px;
         left: 0;
         padding: 1rem;
+        transition: all 0.3s ease;
     }
 
     body[data-theme="dark"] .nav-links {
@@ -487,7 +610,7 @@ body[data-theme="dark"] footer {
         right: 60px;
     }
 
-    .hero-content h1 {
+    .hero-content .animate-title {
         font-size: 2rem;
     }
 
@@ -496,7 +619,8 @@ body[data-theme="dark"] footer {
         padding: 1rem;
     }
 
-    .faculty-member img {
+    .faculty-member img,
+    .testimonial img {
         width: 100px;
         height: 100px;
     }
